@@ -1,0 +1,10 @@
+server:
+  port: 8780
+spring:
+  application:
+    name: provider-simple
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka0:8880/eureka/,http://eureka1:8881/eureka/,http://eureka2:8882/eureka/

@@ -1,0 +1,12 @@
+#修改本机host文件：eureka0，eureka1，eureka2指向的ip地址
+
+server:
+  port: 8882
+eureka:
+  instance:
+    hostname: eureka2
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka0:8880/eureka/,http://eureka1:8881/eureka/,http://eureka2:8882/eureka/

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.lxw</groupId>
+    <artifactId>spring-cloud-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>common</module>
+        <module>register-center</module>
+        <module>server-demo</module>
+        <module>provider-simple</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+
+        <spring-boot-starter-web-version>2.0.4.RELEASE</spring-boot-starter-web-version>
+        <spring-cloud-starter-eureka-server-version>1.4.7.RELEASE</spring-cloud-starter-eureka-server-version>
+        <spring-cloud-starter-feign-version>1.4.7.RELEASE</spring-cloud-starter-feign-version>
+
+        <!-- build plugin -->
+        <maven-resources-plugin-version>3.0.2</maven-resources-plugin-version>
+        <maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
+        <maven-deploy-plugin-version>2.8.2</maven-deploy-plugin-version>
+        <jib-maven-plugin-version>1.3.0</jib-maven-plugin-version>
+
+        <!-- biz -->
+        <common-version>1.0.0-SNAPSHOT</common-version>
+        <register-center-version>1.0.0-SNAPSHOT</register-center-version>
+        <server-demo-version>1.0.0-SNAPSHOT</server-demo-version>
+        <provider-simple-version>1.0.0-SNAPSHOT</provider-simple-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- biz -->
+            <dependency>
+                <groupId>cn.lxw</groupId>
+                <artifactId>common</artifactId>
+                <version>${common-version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- starter -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-starter-web-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                <version>${spring-cloud-starter-eureka-server-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${spring-cloud-starter-feign-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix</artifactId>
+                <version>${spring-cloud-starter-feign-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-web-version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
