@@ -13,6 +13,7 @@
         <module>register-center</module>
         <module>server-demo</module>
         <module>provider-simple</module>
+        <module>agi-gateway</module>
     </modules>
 
     <parent>
@@ -26,8 +27,7 @@
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
 
         <spring-boot-starter-web-version>2.0.4.RELEASE</spring-boot-starter-web-version>
-        <spring-cloud-starter-eureka-server-version>1.4.7.RELEASE</spring-cloud-starter-eureka-server-version>
-        <spring-cloud-starter-feign-version>1.4.7.RELEASE</spring-cloud-starter-feign-version>
+        <spring-cloud-starter-version>1.4.7.RELEASE</spring-cloud-starter-version>
 
         <!-- build plugin -->
         <maven-resources-plugin-version>3.0.2</maven-resources-plugin-version>
@@ -40,6 +40,7 @@
         <register-center-version>1.0.0-SNAPSHOT</register-center-version>
         <server-demo-version>1.0.0-SNAPSHOT</server-demo-version>
         <provider-simple-version>1.0.0-SNAPSHOT</provider-simple-version>
+        <agi-gateway-version>1.0.0-SNAPSHOT</agi-gateway-version>
     </properties>
 
     <dependencyManagement>
@@ -71,20 +72,27 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-eureka-server</artifactId>
-                <version>${spring-cloud-starter-eureka-server-version}</version>
+                <version>${spring-cloud-starter-version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-feign</artifactId>
-                <version>${spring-cloud-starter-feign-version}</version>
+                <version>${spring-cloud-starter-version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-hystrix</artifactId>
-                <version>${spring-cloud-starter-feign-version}</version>
+                <version>${spring-cloud-starter-version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zuul</artifactId>
+                <version>${spring-cloud-starter-version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -92,6 +100,8 @@
                 <version>${spring-boot-starter-web-version}</version>
                 <scope>test</scope>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 </project>

@@ -1,5 +1,6 @@
 # spring-cloud-demo
 
+##agi-gateway spring-cloud自带网关zuul，利用google令牌桶算法限流，反向代理，鉴权，分流等
 ##register-center 利用spring-cloud自带eureka服务，配置高可用服务注册中心
 ##server-demo 服务消费者
 ##provider-simple 服务提供者

@@ -1,0 +1,24 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka0:8880/eureka/,http://eureka1:8881/eureka/,http://eureka2:8882/eureka/
+
+zuul:
+  routes:
+    provider-simple:
+      path: /provider-simple/**
+      serviceId: provider-simple
+
+      #true：http://127.0.0.1:5555/api/provider-simple/业务接口，false：http://127.0.0.1:5555/api/业务接口
+      strip-prefix: true
+
+
+  #屏蔽路径，即使/provider-simple/hello/**也照样屏蔽
+  #ignored-patterns: /**/hello/**
+  prefix: /api
